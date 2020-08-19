@@ -1,6 +1,5 @@
 let paymentInfo = JSON.parse(localStorage.getItem("paymentInfo")) || [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let order = JSON.parse(localStorage.getItem("order")) || [];
 
 const name = document.getElementsByClassName("payment__info-name")[0];
 const address = document.getElementsByClassName("payment__info-address")[0];
@@ -46,7 +45,6 @@ deleteBtn.onclick = () => {
 	let result = confirm("Xóa bỏ đơn hàng hiện tại?");
 	if (result) {
 		localStorage.removeItem("cart");
-		localStorage.removeItem("paymentInfo");
 		window.location = "index.html";
 	}
 };
@@ -63,9 +61,13 @@ payBtn.onclick = () => {
 		date: date,
 		time: time,
 	};
-	console.log(newOrder);
-	order.push(newOrder);
-	localStorage.setItem("order", JSON.stringify(order));
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", "http://localhost:3000/order");
+	xhr.setRequestHeader("Content-type", "application/json");
+	xhr.onreadystatechange = () => {
+		if (xhr.readyState !== 4) return;
+	}
+	xhr.send(JSON.stringify(newOrder))
 	localStorage.removeItem("cart");
     window.location = "index.html"
     alert("Đặt hàng thành công")

@@ -1,13 +1,191 @@
 {
-    "products": [
-        {"id": 1, "name": "Rượu vang Đà Lạt", "price": 350000, "oldPrice": 45000},
-        {"id": 2, "name": "Rượu vang đỏ", "price": 700000, "oldPrice": 450000},
-        {"id": 3, "name": "Rượu vang trái cây", "price": 300000, "oldPrice": 450000},
-        {"id": 4, "name": "Rượu whiskey", "price": 250000, "oldPrice": 450000},
-        {"id": 5, "name": "Rượu vodka", "price": 300000, "oldPrice": 450000},
-        {"id": 6, "name": "Rượu gin", "price": 200000, "oldPrice": 450000},
-        {"id": 7, "name": "Rượu nho", "price": 150000, "oldPrice": 450000},
-        {"id": 8, "name": "Rượu chivas", "price": 500000, "oldPrice": 450000},
-        {"id": 9, "name": "Rượu tequila", "price": 650000, "oldPrice": 450000}
-    ]
+  "products": [
+    {
+      "id": 1,
+      "name": "Rượu vang Đà Lạt",
+      "price": 350000,
+      "oldPrice": 45000
+    },
+    {
+      "id": 2,
+      "name": "Rượu vang đỏ",
+      "price": 700000,
+      "oldPrice": 450000
+    },
+    {
+      "id": 3,
+      "name": "Rượu vang trái cây",
+      "price": 300000,
+      "oldPrice": 450000
+    },
+    {
+      "id": 4,
+      "name": "Rượu whiskey",
+      "price": 250000,
+      "oldPrice": 450000
+    },
+    {
+      "id": 5,
+      "name": "Rượu vodka",
+      "price": 300000,
+      "oldPrice": 450000
+    },
+    {
+      "id": 6,
+      "name": "Rượu gin",
+      "price": 200000,
+      "oldPrice": 450000
+    },
+    {
+      "id": 7,
+      "name": "Rượu nho",
+      "price": 150000,
+      "oldPrice": 450000
+    },
+    {
+      "id": 8,
+      "name": "Rượu chivas",
+      "price": 500000,
+      "oldPrice": 450000
+    },
+    {
+      "id": 9,
+      "name": "Rượu tequila",
+      "price": 650000,
+      "oldPrice": 450000
+    }
+  ],
+  "order": [
+    {
+      "item": [
+        {
+          "id": 1,
+          "name": "Rượu vang Đà Lạt",
+          "price": 350000,
+          "oldPrice": 45000,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Rượu vang đỏ",
+          "price": 700000,
+          "oldPrice": 450000,
+          "quantity": 3
+        }
+      ],
+      "info": {
+        "firstName": "Linh",
+        "lastName": "Nguyễn",
+        "city": "Hà Nội",
+        "address": "Mai Dịch, Cầu Giấy",
+        "phone": "0355469233",
+        "email": "thunderking9x@gmail.com"
+      },
+      "date": "19/8/2020",
+      "time": "13:12:21",
+      "id": 1
+    },
+    {
+      "item": [
+        {
+          "id": 3,
+          "name": "Rượu vang trái cây",
+          "price": 300000,
+          "oldPrice": 450000,
+          "quantity": 3
+        }
+      ],
+      "info": {
+        "firstName": "Linh",
+        "lastName": "Nguyễn",
+        "city": "Hà Nội",
+        "address": "Mai Dịch, Cầu Giấy",
+        "phone": "0355469233",
+        "email": "thunderking9x@gmail.com"
+      },
+      "date": "19/8/2020",
+      "time": "13:14:10",
+      "id": 2
+    },
+    {
+      "item": [
+        {
+          "id": 1,
+          "name": "Rượu vang Đà Lạt",
+          "price": 350000,
+          "oldPrice": 45000,
+          "quantity": 1
+        }
+      ],
+      "info": {
+        "firstName": "Linh",
+        "lastName": "Nguyễn",
+        "city": "Hà Nội",
+        "address": "Mai Dịch, Cầu Giấy",
+        "phone": "0355469233",
+        "email": "thunderking9x@gmail.com"
+      },
+      "date": "19/8/2020",
+      "time": "13:26:49",
+      "id": 3
+    },
+    {
+      "item": [
+        {
+          "id": 1,
+          "name": "Rượu vang Đà Lạt",
+          "price": 350000,
+          "oldPrice": 45000,
+          "quantity": 4
+        }
+      ],
+      "info": {
+        "firstName": "Linh",
+        "lastName": "Nguyễn",
+        "city": "Hà Nội",
+        "address": "Mai Dịch, Cầu Giấy",
+        "phone": "0355469233",
+        "email": "thunderking9x@gmail.com"
+      },
+      "date": "19/8/2020",
+      "time": "14:21:51",
+      "id": 4
+    },
+    {
+      "item": [
+        {
+          "id": 8,
+          "name": "Rượu chivas",
+          "price": 500000,
+          "oldPrice": 450000,
+          "quantity": 2
+        },
+        {
+          "id": 9,
+          "name": "Rượu tequila",
+          "price": 650000,
+          "oldPrice": 450000,
+          "quantity": 2
+        },
+        {
+          "id": 2,
+          "name": "Rượu vang đỏ",
+          "price": 700000,
+          "oldPrice": 450000,
+          "quantity": 1
+        }
+      ],
+      "info": {
+        "firstName": "Linh",
+        "lastName": "Nguyễn",
+        "city": "Hà Nội",
+        "address": "Mai Dịch, Cầu Giấy",
+        "phone": "0355469233",
+        "email": "thunderking9x@gmail.com"
+      },
+      "date": "19/8/2020",
+      "time": "14:45:47",
+      "id": 5
+    }
+  ]
 }
