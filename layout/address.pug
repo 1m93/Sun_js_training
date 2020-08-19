@@ -1,0 +1,20 @@
+extends layout.pug
+block title 
+    title Địa chỉ
+block content
+    .container 
+        .address 
+            +breadcrumb(["Trang chủ", "Địa chỉ"])
+            +titleLeft("ĐỊA CHỈ", "big")
+            .address__edit
+                +editProfile("h3", editTitle, address)
+                +editProfile("a", editTitle, address)
+            each val in [1, 2]
+                .address__info
+                    table.address__info-table 
+                        - for (var i = 0; i < 8; i++) 
+                            tr 
+                                td=editTitle[i]
+                                td=address[i]
+                    .address__info-link
+                        a(href="#") Chỉnh sửa địa chỉ

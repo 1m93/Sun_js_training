@@ -1,0 +1,194 @@
+@media only screen and (max-width: $tablet)
+    .container
+        width: 90%
+    
+    .slide 
+        height: 300px
+        img 
+            width: 500px
+    
+    .rowProductList
+        &__item-img-buttons
+            font-size: 0.6rem
+
+    @each $tag in ("sale", "new", "hot")
+        .saletag-small--#{$tag}
+            font-size: 0.5rem
+            top: -3rem
+            left: -6rem
+            padding: 4rem 5rem 0.5rem
+            &::after 
+                top: 5.2rem
+        .saletag-big--#{$tag}
+            font-size: 0.8rem
+            &::after 
+                top: 5rem
+
+    header
+        .headMenu
+            &__left
+                &-normal 
+                    display: none 
+                &-button 
+                    display: inline-block
+        .menu 
+            &__logo
+                img 
+                    width: 70px
+            &__list 
+                display: none 
+            &__responsive 
+                display: inline-block
+                i
+                    font-size: 1.5rem
+            &__submenu 
+                width: 550px
+                top: 5rem
+                right: 0
+                &-image 
+                    display: none
+        
+    footer 
+        .info
+            .container
+                flex-wrap: wrap
+            &__brand
+                width: 90%
+            &__about, &__email 
+                flex-basis: 30% 
+            &__contact 
+                margin-top: 2rem
+                +flexDisplay(center)
+                align-items: center
+                text-align: center
+                & > div 
+                    margin-bottom: $smSpace
+
+    .home 
+        .container 
+            .sale
+                &__product
+                    width: 90%
+                    margin: -17rem auto 7rem auto
+            .other 
+                display: block
+                &__blog 
+                    margin-bottom: 3rem
+                &__customer
+                    width: 50%
+                    margin: auto
+                    *
+                        margin: $xsSpace 0
+
+    .pdDetail
+        .detail  
+            display: block
+            &__img 
+                margin-right: 0
+            &__describe
+                margin-top: 2rem
+                &-social
+                    justify-content: start
+                    & > div 
+                        margin-right: $mdSpace
+        .more
+            display: block
+            .img 
+                display: none
+    
+    .pdList 
+        .wrapper
+            display: block
+            &__sidebar 
+                &-menu 
+                    ul 
+                        li 
+                            float: left
+                            &::after
+                                content: "|"
+                                margin: 0 $smSpace
+                            &:last-child::after 
+                                display: none
+    
+    .cart
+        td, th 
+            font-size: 0.9rem
+        &__table 
+            &-price 
+                +price(0.9rem, 0.6rem, $PrimaryColor)
+        &__buttons
+            button
+                font-size: 0.6rem
+    
+    .about 
+        &__content 
+            display: block
+            &-img 
+                width: 100%
+                margin-bottom: 1.5rem
+                img 
+                    width: 100%
+
+    .blogDetail 
+        .wrapper
+            flex-direction: column-reverse
+            &__sidebar
+                margin-top: 4rem
+                +flexDisplay(space-between)
+                & > div 
+                    flex: 1
+                    +flexDisplay(space-between)
+                    flex-direction: column
+                &-new-item, &-tags-items, &-video-item 
+                    margin: 1rem 0
+            &__post-blog 
+                .blogListItem
+                    h3 
+                        font-size: 1.2rem 
+                    small, p 
+                        font-size: 100%
+    
+    .login, .signup
+        .textInput 
+            label 
+                width: 15%
+            input 
+                width: 85%
+        &__form
+            &-submit 
+                margin-left: 15%
+    
+    .order 
+        .wrapper 
+            flex-direction: column-reverse
+        &__info-inner
+            border-bottom: none
+            &-item
+                float: left
+                margin-right: $mdSpace
+    
+    .address
+        &__info 
+            width: 100%
+        &__edit 
+            display: block
+            form:first-child 
+                margin-bottom: 2rem
+    
+    .contact
+        &__inner 
+            display: block
+            &-right
+                margin-top: 3rem
+                text-align: center
+                &-info 
+                    display: flex
+                    text-align: start
+                    justify-content: center
+                    margin: $mdSpace 0
+                    &-item
+                        margin: 0 $mdSpace
+            
+    .error 
+        &__inner 
+            padding-top: 40vw

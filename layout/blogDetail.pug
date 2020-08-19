@@ -1,0 +1,45 @@
+extends layout.pug
+block title 
+    title Blog Detail
+block content
+    .container 
+        .blogDetail 
+            +breadcrumb(["Trang chủ", "Blog"])
+            +titleLeft("BLOG", "big")
+            .wrapper 
+                .wrapper__sidebar
+                    .wrapper__sidebar-new
+                        h2 bài viết mới nhất
+                        +newBlogListItem(["blog1", "blog2", "blog3"])
+                    div
+                        .wrapper__sidebar-tags
+                            h2 blog tags  
+                            .wrapper__sidebar-tags-items 
+                                +productTags(pdTags)
+                        .wrapper__sidebar-video
+                            h2 lastest video
+                            .wrapper__sidebar-video-item
+                                img(src="assets/blog/blogVideo.png" width="100%")
+                                a.wrapper__sidebar-video-item-button(href="#")
+                                    i.fas.fa-play
+                .wrapper__post
+                    .wrapper__post-blog
+                        +blogListItem(blogDetailItem.image, blogDetailItem.name, blogDetailItem.author, blogDetailItem.describe)
+                    form.wrapper__post-contact
+                        h2: i ĐÓNG GÓP Ý KIẾN
+                        +createTextInput("Tên", "text", 1, "opinion")
+                        +createTextInput("Email", "text", 1, "email")
+                        +createTextArea("Ý kiến", 1, "content")
+                        button.btn GỬI Ý KIẾN
+                    .wrapper__post-comment 
+                        h2 BÌNH LUẬN (3)
+                        - for (var i = 0; i < 3; i++)
+                            +blogComment(blogComment)
+                        .wrapper__post-comment-pages 
+                            a(href="#") <
+                            - for (var i = 1; i < 4; i++)
+                                if i == 1
+                                    a.wrapper__post-comment-pages--active(href="#")=i
+                                else
+                                    a(href="#")=i
+                            a(href="#") >

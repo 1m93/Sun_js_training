@@ -1,0 +1,12 @@
+extends layout.pug
+block title 
+    title Blog
+block content
+    .container 
+        .blog 
+            +breadcrumb(["Trang chủ", "Blog"])
+            +titleLeft("BLOG", "big")
+            .blog__list 
+                - for (var i = 0; i < 3; i++) 
+                    each val in blogListItems
+                        +blogListItem(val.image, val.name, val.author, val.describe)

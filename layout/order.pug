@@ -1,0 +1,31 @@
+extends layout.pug
+block title 
+    title Đơn hàng
+block content
+    .container 
+        .order 
+            +breadcrumb(["Trang chủ", "Danh sách đơn hàng"])
+            +titleLeft("ĐƠN HÀNG", "big")
+            .wrapper 
+                .order__list 
+                    .order__list-head
+                        h2.order__list-head-title DANH SÁCH ĐƠN HÀNG 
+                        .order__list-head-links Trạng thái:
+                            each val in orderHeadLinks
+                                a(href="#")=val 
+                                span |
+                    .order__list-body
+                        table
+                            +orderTable(orderList)
+                .order__info 
+                    .order__info-inner
+                        h2 THÔNG TIN KHÁCH HÀNG 
+                        each val in orderInfo
+                            .order__info-inner-item 
+                                div 
+                                    i(class=val.icon)
+                                div 
+                                    p=val.title 
+                                    p=val.content
+                        .clearfix
+                        a(href="#") Chi tiết địa chỉ

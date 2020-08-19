@@ -1,0 +1,21 @@
+.error 
+    width: 100vw
+    height: 100vh
+    background: url("../assets/images/404.png") top no-repeat
+    background-size: contain
+    &__inner  
+        padding-top: 33vw  
+        +flexDisplay(center)
+        align-items: center
+        &-logo 
+            margin-right: 3rem
+        &-buttons 
+            &-link 
+                color: black
+                text-decoration: underline
+            span 
+                margin: 0 2rem 0 $xsSpace
+            input
+                background: url("../assets/images/searchIcon.png") scroll no-repeat 5px 3px
+                padding: $xsSpace $xsSpace $xsSpace 30px
+                +createSolidBorder(1px, $BorderColor)

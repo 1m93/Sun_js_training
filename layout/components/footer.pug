@@ -1,0 +1,46 @@
+footer
+    .info
+        .info__brand
+            img(src="assets/blog/brand.png" width="100%")
+        .container
+            .info__about
+                h2 Thông tin
+                ul 
+                    each val in footerInfo
+                        li: a(href="#")=val
+            .info__about
+                h2 Mua hàng
+                ul 
+                    each val in footerBuy 
+                        li: a(href="#")=val
+            .info__email
+                .info__email-text
+                    h2 Gửi email
+                    p Gửi email cho chúng tôi để được hỗ trợ
+                form
+                    input(placeholder="Enter your email")
+                    button GỬI
+                    .triangle
+                .info__email-social
+                    each val in footerSocial
+                        a(href="#"): i(class=val)
+            .info__contact
+                .info__contact-address
+                    h2 Liên hệ
+                    div
+                        i.fas.fa-map-marker-alt 
+                        p Tầng 4, Tòa nhà Hanoi Group  Số 442 Đội Cấn, P.Cống Vị, Q. Ba Đình, Hà Nội
+                .info__contact-dial 
+                    i.fas.fa-phone-office
+                    span (04) 6674 2332
+                    span(style="padding: 0 7px") -
+                    i.fas.fa-phone-office
+                    span (04) 3786 8904
+                .info__contact-phone 
+                    i.fas.fa-phone-office
+                    span (08) 6680 9686
+                    i.fas.fa-envelope
+                    span: i Support@bizweb.vn
+    .end.container 
+        p © Copyright 2008-2014 DKT Technology JSC
+        img(src="assets/images/payment.png")

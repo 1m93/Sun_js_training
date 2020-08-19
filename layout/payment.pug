@@ -1,0 +1,32 @@
+extends layout.pug
+block title 
+    title Thông tin thanh toán
+block script
+    script(src="js/payment.js")
+block content
+    .container 
+        .payment
+            +breadcrumb(["Trang chủ", "Thanh toán"])
+            +progressbar("Bước 3: Hoàn tất thanh toán")
+            +titleLeft("THANH TOÁN", "big")
+            .payment__wrapper
+                .payment__info 
+                    div
+                        h2 Thông tin giao hàng
+                        p.payment__info-name 
+                        p.payment__info-address 
+                        p.payment__info-phone 
+                        p.payment__info-email
+                .payment__cart 
+                    h2 Đơn hàng 
+                    table.payment__cart-table
+                        tr 
+                            each val in ["sản phẩm", "giá", "số lượng", "tổng số"]
+                                th=val
+                    .payment__cart-total 
+                        h3 Thanh toán khi nhận hàng:
+                        p.payment__cart-total-price
+            .payment__buttons
+                button#backBtn.btn QUAY LẠI
+                button#deleteBtn.btn XÓA
+                button#payBtn.btn THANH TOÁN

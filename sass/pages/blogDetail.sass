@@ -1,0 +1,94 @@
+.blogDetail
+    @extend .endContent
+    .wrapper
+        margin-top: 3rem
+        +flexDisplay(space-between)
+        h3, h2 
+            text-transform: uppercase
+            font-weight: normal
+        &__sidebar
+            flex-basis: $xsWidth
+            h3, h2, p 
+                font-family: roboto
+            &-new
+                &-item
+                    margin: 2rem 0
+                    +flexDisplay(space-between)
+                    cursor: pointer
+                    &-img 
+                        flex-basis: 35%
+                        img 
+                            width: $lgWidth
+                    &-content 
+                        flex-basis: 60%
+                        h3 
+                            margin-bottom: $xsSpace
+            &-tags
+                &-items
+                    margin: 2rem 0
+                    a 
+                        +itemTag($Orange)
+                        border-radius: $xsSpace
+                        background-color: $BorderColor
+                        border: none
+            &-video 
+                &-item
+                    margin: 2rem 0
+                    position: relative
+                    &-button 
+                        +flexDisplay(center)
+                        align-items: center
+                        position: absolute
+                        width: 100%
+                        height: 100%
+                        top: 0
+                        left: 0
+                        i 
+                            color: white
+                            background: rgba(0, 0, 0, 0.7)
+                            border-radius: 50%
+                            padding: 20px
+        &__post
+            flex-basis: 70%
+            &-blog
+                width: $lgWidth
+                .blogListItem
+                    h3 
+                        font-size: 2rem
+                    small, p 
+                        font-size: 125%
+                    a 
+                        pointer-events: none
+                        cursor: default
+                    a:last-child 
+                        display: none
+                    &__img:hover 
+                        .blogListItem__img-inner, i 
+                            opacity: 0
+            &-contact 
+                margin-top: 3rem
+                label
+                    font-style: italic
+                span 
+                    color: red
+                button 
+                    margin-left: 10%
+                    background-color: $BorderColor
+                    color: black
+                    border-radius: $xsSpace
+                    margin-top: 1.5rem
+            &-comment
+                margin-top: 3rem
+                &-pages
+                    margin-top: 1.5rem
+                    text-align: end
+                    a 
+                        margin-left: $smSpace
+                        padding: $smSpace $mdSpace
+                        +createSolidBorder(1px, $BorderColor)
+                    a:first-child, a:last-child 
+                        background-color: black
+                        color: white
+                    &--active
+                        background-color: #737373
+                        color: white

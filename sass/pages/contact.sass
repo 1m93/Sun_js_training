@@ -1,0 +1,37 @@
+.contact
+    @extend .endContent
+    &__inner
+        margin-top: 2rem
+        +flexDisplay(space-between)
+        label, a, p, i, h3
+            color: $SecondaryColor
+        &-left
+            flex-basis: 66%
+            &-map 
+                iframe
+                    width: 100%
+                    height: 500px
+            &-form 
+                margin-top: 3rem
+                .textInput, .textArea 
+                    label
+                        width: 15% 
+                    input, textarea 
+                        width: 85%
+                button
+                    margin-top: 1rem
+                    margin-left: 15%
+        &-right
+            flex-basis: 30%
+            &-info
+                &-item
+                    display: flex
+                    margin: 1.5rem 0
+                    i
+                        margin-right: $smSpace
+            &-social
+                h3
+                    margin-bottom: 1rem
+                    font-weight: normal
+                a
+                    margin-right: $mdSpace

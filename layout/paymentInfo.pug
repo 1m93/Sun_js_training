@@ -1,0 +1,14 @@
+extends layout.pug
+block title 
+    title Thông tin thanh toán
+block script
+    script(src="js/paymentInfo.js")
+block content
+    .container 
+        .address.paymentInfo 
+            +breadcrumb(["Trang chủ", "Thông tin thanh toán"])
+            +progressbar("Bước 2: Nhập thông tin thanh toán")
+            +titleLeft("THÔNG TIN THANH TOÁN", "big")
+            .address__edit
+                +editPayment("h3", editPayment)
+                

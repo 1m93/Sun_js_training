@@ -1,0 +1,175 @@
+@media only screen and (max-width: $mobile)
+    .container
+        width: 95%
+
+    .rowProductList
+        &__wrapper
+            flex-wrap: wrap
+        &__item 
+            flex-basis: $smWidth
+            margin-bottom: $lgSpace
+
+    .slide 
+        img 
+            width: 300px
+    
+    .endContent 
+        margin-bottom: 4rem
+    
+    .progressbar
+        &__bar
+            div 
+                color: $PrimaryColor
+                overflow: hidden
+        &__text 
+            display: block
+    
+    header 
+        .headMenu 
+            &__right
+                form input 
+                    width: 150px
+        .menu 
+            &__submenu 
+                display: block
+                width: 200px
+                padding: $smSpace
+                &-list 
+                    margin-bottom: $mdSpace
+    
+    footer 
+        .info 
+            &__about
+                flex-basis: $smWidth
+            &__email
+                margin-top: 2rem
+                flex-basis: 100%
+                text-align: center
+                form 
+                    margin: $smSpace 0
+                    input 
+                        width: 100%
+
+    .home 
+        .container
+            .sale 
+                &__product 
+                    display: block
+                    margin-top: -9rem
+                    &-img 
+                        margin-bottom: 2rem
+        .gallery 
+            &__img 
+                flex-basis: $smWidth
+                padding-bottom: $xsWidth
+
+    .pdDetail 
+        .detail 
+            &__describe-social
+                display: block
+                & > div 
+                    float: left
+                    margin-bottom: $smSpace
+        .more 
+            .tabs__buttons 
+                button 
+                    font-size: 0.7rem
+    
+    .pdList 
+        .slide 
+            height: 150px
+        .wrapper__products
+            .rowProductList .rowProductList__item
+                flex-basis: 50%
+            .columnProductList .columnProductList__item
+                &-describe 
+                    flex-basis: 70%
+                    font-size: 0.6rem
+                    &-price
+                        +price(0.9rem, 0.6rem, $PrimaryColor)
+                    &-buttons
+                        button
+                            font-size: 0.6rem
+                            padding: 4px 5px
+    
+    .cart
+        td, th 
+            font-size: 0.55rem
+        &__table 
+            &-price 
+                +price(0.55rem, 0.4rem, $PrimaryColor)
+        &__buttons
+            button
+                font-size: 0.4rem
+
+    .about 
+        &__content 
+            &-des 
+                h1 
+                    font-size: 1.15rem
+
+    .blog
+        &__list
+            .blogListItem
+                flex-basis: 47%
+
+    .blogDetail
+        .wrapper
+            &__sidebar 
+                font-size: 70%
+            &__post
+                &-contact
+                    .textInput, .textArea 
+                        label
+                            width: 15% 
+                        input, textarea 
+                            width: 85%
+                    button
+                        margin-left: 15%
+                &-comment
+                    .blogComment
+                        & > *
+                            padding: $smSpace
+    
+    .login, .signup
+        &__form
+            padding: $mdSpace
+        .textInput 
+            label 
+                width: 25%
+            input 
+                width: 75%
+        &__form
+            &-submit 
+                margin-left: 25%
+    
+    .order
+        &__info-inner-item
+            float: none
+        &__list-body
+            overflow-x: auto
+    
+    .contact
+        &__inner
+            &-right-info 
+                flex-wrap: wrap
+                &-item
+                    align-items: center
+                    margin-bottom: $smSpace
+    
+    .error
+        &__inner 
+            display: block
+            text-align: center
+            &-logo
+                width: 100px
+                margin-right: 0
+            &-buttons 
+                margin-top: $lgSpace
+                span 
+                    margin-right: $mdSpace
+    
+    .payment 
+        &__wrapper 
+            display: block
+                    

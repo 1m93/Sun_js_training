@@ -1,0 +1,194 @@
+.pdDetail
+    .detail
+        display: flex
+        @extend .endContent
+        &__img
+            display: flex
+            flex: 3
+            margin-right: 3rem
+            &-list
+                +flexDisplay(center)
+                align-items: center
+                flex-direction: column
+                flex-basis: 10%
+                padding: 0 $smSpace
+                +createSolidBorder(1px, $BorderColor)
+                border-right: none
+                a
+                    display: block 
+                    padding: 20px 0
+                div 
+                    margin: $xsSpace 0
+                    text-align: center
+                    a 
+                        border-bottom: 1px solid $BorderColor
+                    a:last-child
+                        border: none
+                    a:nth-child(3)
+                        img 
+                            +createSolidBorder(1px, $PrimaryColor)
+                img 
+                    width: 100%
+                    border: 1px solid transparent
+                    &:hover 
+                        +createSolidBorder(1px, $PrimaryColor)
+            &-image
+                width: 100%
+                background: url("../assets/product/7.jpg") center no-repeat
+                background-size: contain
+                +createSolidBorder(1px, $BorderColor)
+        &__describe
+            flex: 2
+            label
+                color: $SecondaryColor
+                text-transform: uppercase
+                display: block
+                font-size: 1.3rem
+                margin-bottom: 1rem
+            &-price
+                margin-top: $smSpace
+                +price(2.5rem, 1.5rem, $PrimaryColor)
+            &-reviews
+                padding: $smSpace 0
+                border-top: 1px solid $BorderColor
+                border-bottom: 1px solid $BorderColor
+                margin: 20px 0
+                & > span
+                    margin: 0 $xsSpace
+                &-stars
+                    display: inline-block
+                    direction: rtl
+                    span
+                        position: relative
+                        margin-right: $xsSpace
+                        &:hover::before, &:hover ~ span::before 
+                            content: "\f005"
+                            position: absolute
+                            color: #737373
+                            font-family: "Font Awesome 5 Pro"
+                            font-weight: 900
+            &-buy
+                &-color
+                    margin-bottom: 1rem
+                    div 
+                        input
+                            width: 30px
+                            height: 30px
+                            cursor: pointer
+                            position: relative
+                            margin-right: $smSpace
+                            &::after
+                                content: ""
+                                position: absolute
+                                top: 0
+                                left: 0
+                                width: 100%
+                                height: 100%
+                                +createSolidBorder(2px, white)
+                                outline: 1px solid transparent
+                            &[value=champange]::after
+                                background-color: $PrimaryColor
+                            &[value=black]::after
+                                background-color: black
+                            &[value=cherry]::after
+                                background-color: $CherryColor
+                            &:checked::after, &:hover::after
+                                outline: 1px solid black
+                &-size
+                    margin-bottom: 1rem
+                    select
+                        @extend .timesFont
+                        padding: $xsSpace $smSpace
+                        outline: none
+                        color: $SecondaryColor
+                        border-color: $SecondaryColor
+                        font-size: 1.1rem
+                &-quantity
+                    margin-bottom: 1rem
+                    &-form
+                        display: flex 
+                        & > div
+                            display: flex
+                            align-items: center
+                            margin-right: $mdSpace
+                            background-color: $BorderColor
+                            *
+                                border: none
+                                outline: none 
+                                font-weight: bold
+                                color: #737373
+                            button
+                                font-size: 1.2rem
+                                height: 100%
+                                width: 30px
+                                background-color: transparent
+                            input
+                                height: 70%
+                                text-align: center
+                                width: 70px
+                        & > button
+                            padding: $smSpace 18px
+            &-buttons 
+                margin: 2rem 0 1rem
+                a 
+                    margin-right: $mdSpace
+                i 
+                    margin-right: $smSpace
+            &-content
+                margin-bottom: 1rem
+                p 
+                    color: $SecondaryColor
+            &-social
+                +flexDisplay(space-between)
+                div > span 
+                    padding: $xsSpace $smSpace
+                    margin-left: $xsSpace
+                    +createSolidBorder(1px, $SecondaryColor)
+                &--facebook
+                    +socialButton(white, white, $FacebookColor, $FacebookColor)
+                &--twitter
+                    +socialButton($TwitterColor, $SecondaryColor, white, $SecondaryColor)
+                &--google
+                    +socialButton($GoogleColor, $GoogleColor, white, $SecondaryColor)
+                &--linkedin
+                    +socialButton(white, white, $LinkedinColor, $LinkedinColor)
+                    & > span 
+                        display: none
+                &--pinterest
+                    +socialButton($PinterestColor, $PinterestColor, white, $SecondaryColor)
+                    & > span 
+                        display: none
+    .more
+        @extend .endContent
+        +flexDisplay(space-between)
+        .tabs
+            flex-basis: 60%
+            &__buttons
+                margin-bottom: 1rem
+                &-btn 
+                    text-transform: uppercase
+                    font-size: 1.3rem
+                    padding: $xsSpace $smSpace
+                    border: none
+                    background-color: transparent
+                    color: $SecondaryColor
+                    @extend .timesFont
+                    &:hover, &--active 
+                        color: white
+                        background-color: $PrimaryColor
+            &__content
+                text-indent: $mdSpace
+        .img
+            flex-basis: 30%
+            background: url("../assets/blog/subMenuImage.png") center no-repeat
+            background-size: cover
+            display: flex
+            align-items: center
+            text-align: center
+            h1 
+                width: 100%
+                font-weight: normal 
+                color: white
+                font-family: "roboto"
+    .product
+        @extend .endContent

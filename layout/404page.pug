@@ -1,0 +1,15 @@
+extends layout.pug
+block title 
+    title 404 not found
+block header
+block content
+    .error
+        .error__inner
+            img.error__inner-logo(src="assets/images/blackLogo.png")
+            .error__inner-buttons
+                a.error__inner-buttons-link(href="#") TRANG CHỦ
+                span: i.fas.fa-caret-right
+                a.error__inner-buttons-link(href="#") LIÊN HỆ 
+                span: i.fas.fa-caret-right
+                input(type="text")
+block footer

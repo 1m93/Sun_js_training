@@ -1,0 +1,6 @@
+extends pdlist_grid.pug 
+block listView 
+    a(href="pdlist_grid.html"): i.fas.fa-th
+    a.wrapper__products-headbar--active(href="pdlist_list.html"): i.fas.fa-th-list
+block productList 
+    +productListItemColumn([1, 2, 3, 4])

@@ -1,0 +1,55 @@
+.order 
+    @extend .endContent
+    a 
+        color: black
+    h2 
+        font-weight: normal 
+        margin-bottom: $mdSpace
+    .wrapper
+        margin-top: 3rem
+        +flexDisplay(space-between)
+    &__list
+        flex-basis: 73%
+        &-head 
+            background-color: #fafafa
+            +createSolidBorder(1px, $BorderColor)
+            border-bottom: none
+            padding: 1.5rem
+            &-links 
+                a
+                    white-space: nowrap
+                a:first-child 
+                    margin-left: $smSpace 
+                span 
+                    padding: 0 $smSpace
+                span:last-child
+                    display: none
+        &-body  
+            table
+                width: 100%
+                border-collapse: collapse
+                text-align: center
+                +createSolidBorder(1px, $BorderColor)
+                th 
+                    text-transform: uppercase
+                    +createSolidBorder(1px, $BorderColor)
+                th, td 
+                    padding: $mdSpace
+                    vertical-align: top
+                td 
+                    border-left: 1px solid $BorderColor
+            &-code
+                text-align: start
+    &__info
+        flex-basis: 24%
+        &-inner
+            padding: 1.5rem
+            background-color: #fafafa
+            +createSolidBorder(1px, $BorderColor)
+            &-item 
+                display: flex
+                margin-bottom: $mdSpace
+                i 
+                    margin-right: $smSpace
+            a 
+                text-decoration: underline

@@ -1,0 +1,22 @@
+extends layout.pug
+block title 
+    title Đăng nhập
+block content
+    .container 
+        .login 
+            +breadcrumb(["Trang chủ", "Đăng nhập"])
+            .login__head 
+                +titleLeft("ĐĂNG NHẬP", "big")
+                button.btn ĐĂNG KÝ
+            form.login__form 
+                .login__form-title
+                    h2 khách hàng đăng nhập 
+                    p Nếu bạn có một tài khoản, xin vui lòng đăng nhập 
+                .login__form-input
+                    +createTextInput("Email", "email", 1, "email")
+                    +createTextInput("Password", "password", 1, "password")
+                .login__form-submit
+                    div
+                        input.customCheckbox(type="checkbox" name="forgetPW" value="true")
+                        label(for="forgetPW") Quên mật khẩu
+                    button.btn ĐĂNG NHẬP

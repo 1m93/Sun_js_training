@@ -1,0 +1,45 @@
+.address
+    @extend .endContent
+    &__edit
+        margin-top: 2rem
+        +flexDisplay(space-between)
+        & > *
+            flex-basis: 48%
+        &-form
+            h3 
+                font-weight: normal 
+            a
+                color: $addressColor
+                text-decoration: underline
+                font-size: 1.17em
+            .textInput 
+                label
+                    width: 20%
+                    display: flex 
+                    align-items: center
+                input
+                    width: 80%
+            &-submit 
+                margin-left: 20%
+                div 
+                    margin: 1rem 0
+                    label 
+                        color: $SecondaryColor
+                &-edit
+                    background-color: $addressColor
+                    margin-right: $smSpace
+    &__info
+        margin-top: 2rem
+        width: 48%
+        border-top: 1px solid $BorderColor
+        &-table
+            margin-top: $mdSpace
+            width: 100%
+            td 
+                padding: $mdSpace 0
+        &-link
+            text-align: end
+            a
+                color: $addressColor
+                text-decoration: underline
+                font-size: 1.17em

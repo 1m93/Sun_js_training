@@ -1,0 +1,23 @@
+extends layout.pug
+block title 
+    title Giỏ hàng
+block script
+    script(src="js/cart.js")  
+block content
+    .container
+        .cart 
+            +breadcrumb(["Trang chủ", "Sản phẩm", "Giỏ hàng"])
+            +progressbar("Bước 1: Xác nhận giỏ hàng")
+            +titleLeft("GIỎ HÀNG", "big")
+            table.cart__table 
+                //- +cartTable(shoppingCart)
+                tr 
+                    each val in ["ảnh", "tên sản phẩm", "giá", "số lượng", "tổng số", "xóa"]
+                        th=val
+            .cart__total 
+                h3 Tổng tiền: 
+                p.cart__total-price
+            .cart__buttons 
+                button#continueBtn.btn TIẾP TỤC MUA HÀNG
+                button#removeBtn.btn XÓA
+                button#paymentBtn.btn THANH TOÁN

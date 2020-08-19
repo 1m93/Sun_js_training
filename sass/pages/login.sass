@@ -1,0 +1,23 @@
+.login
+    @extend .endContent
+    &__head
+        margin-bottom: 2rem
+        +flexDisplay(space-between)  
+        button 
+            padding: 6px 50px
+    &__form 
+        padding: 50px
+        +createSolidBorder(1px, $BorderColor)
+        &-title
+            h2 
+                text-transform: uppercase
+                font-weight: normal
+                margin-bottom: 1.5rem
+        &-input 
+            margin-top: 3rem
+        &-submit
+            margin-left: 10%
+            & > div
+                input 
+                    background-color: $SecondaryColor
+                margin: 1.5rem 0

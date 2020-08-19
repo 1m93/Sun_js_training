@@ -1,0 +1,306 @@
+@import 'mixins', 'variables'
+
++fontFaceGenerator(lobster-regular, Lobster-Regular)
++fontFaceGenerator(roboto-regular, Roboto-Regular)
++fontFaceGenerator(utm-alpine, UTM-Alpine-KT)
++fontFaceGenerator(utm-aquarelle, UTM-Aquarelle)
++fontFaceGenerator(utm-caviar, UTM-Caviar)
++fontFaceGenerator(uvf-didot, UVF-Didot)
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-size: 14px
+    @extend .timesFont
+
+a 
+    text-decoration: none
+    @extend .timesFont
+    color: $SecondaryColor
+    &:hover
+        color: $PrimaryColor !important
+        transition: 0.5s
+
+ul 
+    list-style: none
+
+input
+    outline: none
+
+button
+    outline: none
+    cursor: pointer
+
+.introText
+    text-transform: uppercase
+    font-weight: normal
+    letter-spacing: 2px
+
+.btn 
+    color: white
+    background-color: black
+    padding: 6px 18px
+    border: none
+    @extend .timesFont
+    &:hover 
+        background-color: $PrimaryColor 
+        transition: 0.5s
+
+.titleDark
+    text-align: center
+    &__img
+        margin: $xsSpace 0 20px 0
+
+.titleLeft
+    h1, h2 
+        font-weight: normal
+        margin-bottom: $xsSpace
+
+.endContent
+    margin-bottom: 6rem
+
+.timesFont
+    font-family: "Times New Roman", Times, serif
+
+@each $tag, $color in ("sale": $PrimaryColor, "new": $NewColor, "hot": $HotColor)
+    .saletag-small--#{$tag}
+        +saleTagSmall($color)
+    .saletag-big--#{$tag}
+        +saleTagBig($color)
+
+.container
+    width: 80%
+    margin: auto
+
+.breadcrumb
+    margin: 3rem 0
+    span 
+        padding: 0 5px
+    span:last-child
+        display: none
+    &__item:nth-last-child(2)
+        color: $PrimaryColor 
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+
+.rowProductList
+    margin-top: 30px
+    +flexDisplay(space-between)
+    align-items: center
+    &__slide
+        &--left 
+            margin-right: $smSpace
+        &--right
+            margin-left: $smSpace
+    &__wrapper 
+        +flexDisplay(space-between)
+        width: 100%
+    &__item
+        flex-basis: $xsWidth
+        &-img
+            width: $lgWidth
+            padding-bottom: 100%
+            margin-bottom: 20px
+            position: relative
+            cursor: pointer
+            overflow: hidden
+            &-buttons
+                position: absolute
+                width: 100%
+                bottom: 0
+                background-color: black
+                visibility: hidden
+                opacity: 0
+                transition: opacity 0.5s, visibility 0.5s
+                +flexDisplay(space-between)
+                a
+                    flex: 2
+                    display: block
+                    color: white
+                    padding: $xsSpace 0
+                    text-align: center
+                    i
+                        margin-right: $smSpace
+                a:last-child
+                    flex: 1
+                a:nth-child(2)
+                    border-right: 2px solid #262626
+                    border-left: 2px solid #262626
+            &:hover
+                .rowProductList__item-img-buttons
+                    visibility: visible
+                    opacity: 1
+        &-detail
+            text-align: center
+            &-name
+                text-transform: uppercase
+                color: black
+            &-price
+                padding: $smSpace 0 20px 0
+                +flexDisplay(center)
+                align-items: flex-end
+                &>span
+                    margin: 0 $xsSpace
+                    color: $SecondaryColor
+                .newprice
+                    +price(1.2rem, 0.8rem, $PrimaryColor)
+                .oldprice
+                    +price(0.8rem, 0.5rem, $SecondaryColor)
+                    text-decoration: line-through
+
+.columnProductList
+    &__item 
+        display: flex
+        border-bottom: 1px solid $BorderColor
+        margin-top: 2rem
+        &:last-child
+            border: none
+        &-img 
+            flex-basis: 30%
+            img 
+                width: 90%
+        &-describe
+            flex-basis: 60%
+            &-title 
+                font-weight: normal
+            &-price
+                margin-bottom: 1rem
+                +price(2.5rem, 1.5rem, $PrimaryColor)
+            &-content 
+                color: $SecondaryColor
+            &-buttons
+                margin: 1rem 0
+                & > *
+                    margin-right: $mdSpace
+                i 
+                    margin-right: $smSpace
+
+.slide 
+    +slideBackground("slide-1-2050x898")
+    width: 100%
+    height: 667px
+    animation: slide 15s infinite
+    display: flex
+    align-items: center
+    @keyframes slide
+        50%
+            +slideBackground("slide-2")
+        100%
+            +slideBackground("slide-3")
+
+.blogListItem
+    &__title
+        color: black
+    &__img
+        margin-bottom: $mdSpace
+        position: relative 
+        padding-bottom: 60%
+        cursor: pointer
+        &-inner
+            opacity: 0
+            position: absolute
+            top: 0 
+            left: 0
+            right: 0
+            bottom: 0
+            background: linear-gradient(to bottom right, transparent 50%, rgba(255, 255, 255, 0.4) 50%)
+        i 
+            opacity: 0
+            color: black
+            position: absolute
+            top: 50%
+            right: 50%
+            transform: rotate(90deg) translate(-50%, -50%)
+            background-color: rgba(255, 255, 255, 0.8)
+            border-radius: 50%
+            padding: $smSpace
+        &:hover 
+            .blogListItem__img-inner, i 
+                transition: 0.5s
+                opacity: 1
+    h3 
+        cursor: pointer
+        margin-bottom: $xsSpace
+    small
+        color: #cacaca
+    p 
+        color: $SecondaryColor
+        padding: $xsSpace 0
+
+.clearfix
+     clear: both
+
+.textInput, .textArea
+    width: 100%
+    +flexDisplay(space-between)
+    margin-top: 1.5rem
+    label
+        width: 10%
+        span
+            margin-left: $xsSpace
+    input, textarea
+        +createSolidBorder(1px, $BorderColor)
+        width: 90%
+        padding: $smSpace
+
+.blogComment
+    margin-top: 1.5rem
+    & > *
+        color: $SecondaryColor
+        padding: $mdSpace 25px
+    &__head
+        +flexDisplay(space-between)
+        background-color: $BorderColor
+        border-radius: 5px
+        font-style: italic
+        &-more
+            display: flex
+            &-author 
+                padding-right: 20px
+                margin-right: $mdSpace
+                border-right: 1px solid $SecondaryColor
+        &-reply 
+            text-decoration: underline
+
+.customCheckbox 
+    position: relative
+    visibility: hidden
+    &::after
+        visibility: visible
+        content: ""
+        position: absolute
+        width: 60%
+        height: 60%
+        top: 0
+        left: 0
+        transform: translateY(40%)
+        background-color: $BorderColor
+        +createSolidBorder(1px, $SecondaryColor)
+    &:checked::after
+        background-color: $PrimaryColor
+
+.progressbar
+    margin-bottom: 3rem
+    &__bar
+        background-color: $BorderColor
+        border-radius: 13px
+        padding: 3px
+        div 
+            background-color: $PrimaryColor
+            height: 25px
+            border-radius: 10px
+            color: white
+            display: flex 
+            align-items: center
+            padding-left: $mdSpace
+            text-transform: uppercase
+    &__text 
+        text-transform: uppercase
+        margin-top: $smSpace
+        display: none
+
+@import 'components/header', 'components/footer', 'pages/home', 'pages/detail', 'pages/pdlist', 'pages/cart', 'pages/about', 'pages/blog', 'pages/blogDetail', 'pages/login', 'pages/signup', 'pages/order', 'pages/address', 'pages/contact', 'pages/404page', 'pages/paymentInfo', 'pages/payment', 'responsive/tablet', 'responsive/mobile'

@@ -1,0 +1,81 @@
+=slideBackground($image)
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/images/#{$image}.jpg") bottom no-repeat
+    background-size: cover
+
+=fontFaceGenerator($family, $font)
+    @font-face
+        font-family: "#{$family}"
+        src: url("../assets/fonts/#{$font}.ttf")
+
+=flexDisplay($justify)
+    display: flex
+    justify-content: $justify
+
+=price($pricefontsize, $spanfontsize, $color)
+    font-family: utm-caviar
+    font-size: $pricefontsize
+    color: $color
+    span
+        font-size: $spanfontsize
+        vertical-align: top
+
+=saleTagBig($color)
+    position: absolute
+    top: -1.5rem
+    left: -5.5rem
+    transform: rotate(-45deg)
+    color: white
+    font-size: 2rem
+    padding: 3rem 5.5rem 1rem
+    background-color: $color
+    &::after
+        position: absolute
+        content: ""
+        top: 6.8rem
+        left: -2rem
+        width: 20rem
+        height: 1px
+        background-color: $color
+
+=saleTagSmall($color)
+    position: absolute
+    top: -3.5rem
+    left: -7.5rem
+    transform: rotate(-45deg)
+    color: white
+    font-size: 1rem
+    padding: 5rem 6.5rem 1rem
+    background-color: $color
+    &::after
+        position: absolute
+        content: ""
+        top: 7.5rem
+        left: -2rem
+        width: 20rem
+        height: 1px
+        background-color: $color
+
+=createSolidBorder($width, $color)
+    border: $width solid $color
+
+=socialButton($iconColor, $textColor, $bgColor, $borderColor)
+    button
+        padding: $xsSpace
+        color: $textColor
+        background-color: $bgColor
+        +createSolidBorder(1px, $borderColor)
+        border-radius: 3px
+        i 
+            color: $iconColor
+            margin-right: $xsSpace
+
+=itemTag ($color)
+    display: block
+    float: left
+    padding: $xsSpace
+    +createSolidBorder(1px, $SecondaryColor)
+    margin: 0 $smSpace $smSpace 0
+    &:hover
+        background-color: $color
+        color: white !important
+        border-color: $color

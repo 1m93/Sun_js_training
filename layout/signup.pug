@@ -1,0 +1,28 @@
+extends layout.pug
+block title 
+    title Đăng ký
+block content
+    .container 
+        .signup 
+            +breadcrumb(["Trang chủ", "Đăng ký"])
+            .signup__head 
+                +titleLeft("ĐĂNG KÝ", "big")
+                button.btn ĐĂNG NHẬP
+            form.signup__form 
+                .signup__form-title
+                    h2 THÔNG TIN CÁ NHÂN
+                .signup__form-input
+                    - for (var i = 0; i < 4; i++)
+                        +createTextInput(signUp[i].label, signUp[i].type, signUp[i].require, signUp[i].name)
+                .signup__form-submit
+                    div
+                        input.customCheckbox(type="checkbox" name="forgetPW" value="true")
+                        label(for="forgetPW"): strong Đăng ký nhận bản tin
+                .signup__form-title
+                    h2 THÔNG TIN ĐĂNG NHẬP
+                .signup__form-input 
+                    - for (var i = 4; i < 6; i++)
+                        +createTextInput(signUp[i].label, signUp[i].type, signUp[i].require, signUp[i].name)
+                .signup__form-btn
+                    button.btn GỬI
+                    button.btn QUAY LẠI

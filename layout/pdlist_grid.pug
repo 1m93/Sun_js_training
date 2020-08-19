@@ -1,0 +1,39 @@
+extends layout.pug
+block title 
+    title Danh sách sản phẩm
+block script
+    script(src="js/products.js")
+block content
+    .pdList.container 
+        +breadcrumb(["Trang chủ", "Sản phẩm", "Rượu vang đỏ"])
+        .slide
+        .wrapper 
+            .wrapper__sidebar
+                .wrapper__sidebar-menu
+                    +titleLeft("DANH MỤC SẢN PHẨM")
+                    ul.wrapper__sidebar-menu-products
+                        +productListSideBar(pdTypeList)
+                .wrapper__sidebar-compare
+                    +titleLeft("SO SÁNH SẢN PHẨM")
+                    p Bạn chưa có sản phẩm nào để so sánh
+                .wrapper__sidebar-tag
+                    +titleLeft("TAG SẢN PHẨM")
+                    .wrapper__sidebar-tag-items
+                        +productTags(pdTags)
+                .wrapper__sidebar-ad 
+            .wrapper__products
+                .wrapper__products-headbar
+                    .wrapper__products-headbar-left
+                        block listView
+                            a.wrapper__products-headbar--active(href="pdlist_grid.html"): i.fas.fa-th
+                            a(href="pdlist_list.html"): i.fas.fa-th-list
+                    .wrapper__products-headbar-right
+                        a(href="#"): i.fas.fa-caret-left
+                        - for (var i = 1; i < 6; i++)
+                            if i == 2
+                                a.wrapper__products-headbar--active(href="#")=i
+                            else
+                                a(href="#")=i
+                        a(href="#"): i.fas.fa-caret-right
+                block productList
+                    +productListItem(pdListColumns)

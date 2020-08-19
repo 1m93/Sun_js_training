@@ -1,0 +1,39 @@
+header
+    block headMenu 
+        .headMenu
+            include headmenu.pug
+    block slide
+    .menu
+        .container 
+            .menu__logo 
+                img(src="assets/images/menuLogo.png")
+            .menu__list
+                each val in menuItems
+                    if val.name === "Rượu vang bò"
+                        .menu__mega
+                            a.menu__list-item(href="#")=val.name
+                            .menu__submenu 
+                                - for (var i = 0; i < 3; i++)
+                                    .menu__submenu-list
+                                        a.menu__submenu-list-title: h3 Rượu ngoại 
+                                        each val in submenuItmes
+                                            a.menu__submenu-list-item(href="#")=val
+                                .menu__submenu-image
+                    else
+                        a.menu__list-item(href=val.link+".html")=val.name
+            .menu__responsive 
+                i.fas.fa-bars
+                ul.menu__responsive-list
+                    each val in menuItems
+                        if val.name === "Rượu vang bò"
+                            .menu__mega
+                                li: a.menu__list-item=val.name
+                                .menu__submenu 
+                                    - for (var i = 0; i < 3; i++)
+                                        .menu__submenu-list
+                                            a.menu__submenu-list-title: h3 Rượu ngoại 
+                                            each val in submenuItmes
+                                                a.menu__submenu-list-item(href="#")=val
+                                    .menu__submenu-image
+                        else
+                            li: a.menu__list-item(href=val.link+".html")=val.name

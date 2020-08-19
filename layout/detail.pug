@@ -1,0 +1,78 @@
+extends layout.pug
+block title 
+    title Chi tiết sản phẩm
+block script
+    script(src="js/detail.js")
+block content
+    .pdDetail.container 
+        +breadcrumb(["Trang chủ", "Sản phẩm", "Rượu vang đỏ"])
+        .detail
+            .detail__img 
+                .detail__img-list 
+                    a(href="#"): i.fas.fa-arrow-up
+                    div
+                        each val in [5, 6, 7, 8, 9]
+                            a(href="#"): img(src="assets/product/" + val + ".jpg")
+                    a(href="#"): i.fas.fa-arrow-down
+                .detail__img-image 
+            .detail__describe 
+                +titleLeft("RƯỢU NHO NĂM 1987", "big")
+                .detail__describe-price 330,000
+                    span đ
+                .detail__describe-reviews 
+                    .detail__describe-reviews-stars 
+                        - for (var i = 0; i < 5; i++)
+                            span: i.far.fa-star
+                    a.detail__describe-reviews-link(href="#") 1 Review(S)
+                    span |
+                    a.detail__describe-reviews-link(href="#") Add Your Review
+                form.detail__describe-buy 
+                    .detail__describe-buy-color 
+                        label(for="color") Màu sắc 
+                        div 
+                            input(type="radio" name="color" value="champange")
+                            input(type="radio" name="color" value="black")
+                            input(type="radio" name="color" value="cherry" checked)
+                    .detail__describe-buy-size 
+                        label(for="size") Kích cỡ
+                        select#size(name="size")
+                            each val in ["Loại to", "Loại vừa", "Loại nhỏ"]
+                                option(value=val)=val
+                    .detail__describe-buy-quantity 
+                        label(for="quantity") Số lượng
+                        .detail__describe-buy-quantity-form
+                            div 
+                                button(type="button") -
+                                input(type="number" min="1" step="1" value="1")
+                                button(type="button") +
+                            button(type="button").btn ADD TO CART
+                .detail__describe-buttons 
+                    each val in pdDetailButtons
+                        a(href="#")
+                            i(class=val.icon)
+                            span=val.name
+                .detail__describe-content 
+                    label Mô tả
+                    p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+                .detail__describe-social 
+                    each val in pdSocialButtons
+                        div(class="detail__describe-social--"+val.name)
+                            button
+                                i(class=val.icon)
+                                span=val.content
+                            span 0
+                .clearfix
+        .more
+            .tabs
+                .tabs__buttons 
+                    button.tabs__buttons-btn.tabs__buttons-btn--active Đặc điểm nổi bật 
+                    button.tabs__buttons-btn Thông tin sản phẩm 
+                    button.tabs__buttons-btn Đánh giá
+                .tabs__content
+                    p=pdDetailDescribe
+            .img
+                h1 RƯỢU NHO
+
+        .product 
+            +titleDark("sản phẩm liên quan")
+            +productListItem (bestSellerProducts, true)

@@ -1,0 +1,74 @@
+footer 
+    .info
+        padding-bottom: 35px
+        border-bottom: 1px solid #e7e7e7
+        &__brand
+            width: 70%
+            margin: 0 auto 50px auto
+        .container
+            display: flex
+        h2 
+            @extend .introText
+            margin-bottom: $mdSpace
+        &__about
+            flex: 1
+            text-transform: uppercase
+            li 
+                margin-bottom: $xsSpace
+        &__email
+            flex: 2
+            +flexDisplay(space-between)
+            flex-direction: column
+            p
+                color: $SecondaryColor
+            form 
+                display: flex
+                input
+                    padding: $xsSpace $mdSpace $xsSpace 17px
+                    +createSolidBorder(1px, #787878)
+                    width: 60%
+                    &::placeholder
+                        font-style: italic
+                        color: $SecondaryColor
+                button 
+                    @extend .btn
+                    margin-left: -5px
+                    &:hover
+                        ~.triangle
+                            border-top: 14px solid transparent
+                            border-left: $mdSpace solid $PrimaryColor
+                            border-bottom: 14px solid transparent
+                            transition: 0.5s
+                .triangle
+                    border-top: 14px solid transparent
+                    border-left: $mdSpace solid black
+                    border-bottom: 14px solid transparent
+                    &:hover 
+                        ~button
+                            background-color: $PrimaryColor
+            &-social
+                margin-bottom: $xsSpace
+                a
+                    margin-right: $mdSpace
+        &__contact
+            flex: 2
+            +flexDisplay(space-between)
+            flex-direction: column
+            i
+                margin-right: $smSpace
+            &-address
+                div 
+                    display: flex
+            &-phone
+                margin-bottom: $xsSpace
+                span:nth-child(2) 
+                    margin-right: 20px
+                span:nth-child(4)
+                    i 
+                        color: $PrimaryColor
+                        text-transform: uppercase
+    .end
+        +flexDisplay(space-between)
+        align-items: center
+        color: $SecondaryColor
+        padding: $mdSpace 0

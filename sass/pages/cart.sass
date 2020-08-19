@@ -1,0 +1,44 @@
+.cart
+    @extend .endContent
+    table, td, th 
+        +createSolidBorder(1px, $BorderColor)
+    table 
+        margin-top: 3rem 
+    td, th 
+        padding: 2rem 0
+        font-size: 1.2rem
+    th 
+        text-transform: uppercase
+    &__table
+        width: 100%
+        border-collapse: collapse
+        background-color: $cartTableColor
+        text-align: center
+        &-img 
+            width: 20%
+            img 
+                width: 75%
+        &-name 
+            text-transform: uppercase
+        &-price 
+            +price(1.2rem, 1rem, $PrimaryColor) 
+    &__total 
+        margin-top: 2rem
+        text-align: end
+        h3 
+            font-size: 1.8rem
+            font-weight: normal
+            display: inline
+        p 
+            display: inline
+            margin-left: $xsSpace
+            +price(1.8rem, 1.3rem, $PrimaryColor)
+    &__buttons 
+        margin-top: 2rem
+        text-align: end 
+        button
+            margin-left: $mdSpace
+            padding: $smSpace $mdSpace
+    .progressbar__bar 
+        div 
+            width: 33.33%

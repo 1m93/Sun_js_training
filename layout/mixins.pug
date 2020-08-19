@@ -1,0 +1,213 @@
+mixin productListItem (data, arrow)
+    .rowProductList
+        if (arrow == true)
+            a.rowProductList__slide--left(href="#"): i.fas.fa-arrow-left
+        .rowProductList__wrapper
+            - for (var i = 0; i < data.length; i++)
+                .rowProductList__item
+                    .rowProductList__item-img(
+                        style="background: url(assets/product/" + data[i].image + ".jpg) no-repeat bottom; background-size: contain" 
+                    )
+                        case data[i].tag
+                            when ""
+                                - break
+                            when "sale"
+                                p.saletag-small--sale Sale
+                            when "new"
+                                p.saletag-small--new Mới 
+                            when "hot"
+                                p.saletag-small--hot Hot
+                        .rowProductList__item-img-buttons
+                            a(href="#")
+                                i.fas.fa-heart
+                                | Yêu thích
+                            a(href="#")
+                                i.fas.fa-signal
+                                | So sánh 
+                            a(href="#")
+                                i.fas.fa-compress-alt
+                    .rowProductList__item-detail 
+                        a.rowProductList__item-detail-name(href="detail.html") rượu vang đà lạt 
+                        .rowProductList__item-detail-price
+                            p.newprice 350.000
+                                span đ
+                            span -
+                            p.oldprice 450.000
+                                span đ
+                        button.btn ADD TO CART
+        if (arrow == true)
+            a.rowProductList__slide--right(href="#"): i.fas.fa-arrow-right
+
+mixin productListItemColumn (data)
+    .columnProductList 
+        - for (var i = 0; i < data.length; i++)
+            .columnProductList__item 
+                .columnProductList__item-img
+                    img(src="assets/product/"+data[i]+".jpg")
+                .columnProductList__item-describe 
+                    h1.columnProductList__item-describe-title RƯỢU NHO NĂM 1987
+                    .columnProductList__item-describe-price
+                        p.newprice 350.000
+                            span đ
+                    .columnProductList__item-describe-content 
+                        p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+                    .columnProductList__item-describe-buttons 
+                        button.btn ADD TO CART
+                        a(href="#")
+                            i.fas.fa-heart
+                            | Yêu thích
+                        a(href="#")
+                            i.fas.fa-signal
+                            | So sánh 
+
+mixin galleryItem (data)
+    - for (var i = 0; i < data.length; i++)
+        a(href="#" style="background: url(assets/gallery/" + data[i] + ".png) no-repeat center; background-size: cover").gallery__img
+            .gallery__img-content
+                p 1987
+                h3 RƯỢU
+
+mixin titleDark (text)
+    .titleDark
+        h2.introText=text
+        img.titleDark__img(src="assets/images/title-dark.png")
+
+mixin titleLeft (text, size)
+    .titleLeft
+        if size == "big"
+            h1=text
+        else 
+            h2=text
+        img(src="assets/images/titleleft-dark.png")
+
+mixin blogListItem (image, name, author, describe)
+    .blogListItem
+        .blogListItem__img(style="background: url(assets/blog/" + image + ".png) no-repeat center; background-size: cover")
+            .blogListItem__img-inner
+            a(href="blogDetail.html"): i.fas.fa-link
+        a.blogListItem__title(href="blogDetail.html"): h3.introText=name
+        small=author 
+        p=describe
+        a(href="blogDetail.html") Read more
+
+mixin breadcrumb (links)
+    .breadcrumb
+        - for (var i = 0; i < links.length; i++) 
+            a.breadcrumb__item(href="#")=links[i] 
+            span /
+
+mixin productListSideBar (data)
+    - for (var i = 0; i < data.length; i++)
+        if data[i].quantity == " "
+            li: a.wrapper__sidebar-products--head(href="#")=data[i].name 
+        else
+            li: a(href="#")=data[i].name+" ("+data[i].quantity+")" 
+
+mixin productTags (data)
+    - for (var i = 0; i < data.length; i++)
+        a(href="#")=data[i]
+    .clearfix
+
+mixin cartTable (data) 
+    tr 
+        each val in ["ảnh", "tên sản phẩm", "giá", "số lượng", "tổng số", "xóa"]
+            th=val
+    each val in data 
+        tr 
+            td.cart__table-img: img(src="assets/product/" + val.image + ".jpg")
+            td.cart__table-name=val.name 
+            td.cart__table-price=val.price
+                span đ 
+            td.cart__table-quantity=val.quantity
+            td.cart__table-price=val.price
+                span đ
+            td.cart__table-delete: a: i.fas.fa-trash-alt
+
+mixin newBlogListItem (images)
+    each val in images 
+        a.wrapper__sidebar-new-item
+            .wrapper__sidebar-new-item-img 
+                img(src="assets/blog/" + val + ".png" alt="")
+            .wrapper__sidebar-new-item-content 
+                h3 Cách sắp xếp nội thất trong nhà
+                p
+                    i.fal.fa-calendar
+                    |
+                    | 12 /06/2015 
+
+mixin createTextInput (title, texttype, require, name, value)
+    .textInput
+        label(for=name)=title 
+            if (require == 1)
+                span * 
+        if (value != "")
+            input(type=texttype name=name value=value)
+        else
+            input(type=texttype name=name)
+
+mixin createTextArea (title, require, name)
+    .textArea
+        label(for=name)=title 
+            if (require == 1)
+                span * 
+        textarea(name=name, cols="30", rows="10")
+
+mixin blogComment (data)
+    .blogComment 
+        .blogComment__head 
+            .blogComment__head-more
+                .blogComment__head-more-author="Bình luận bởi " + data.author 
+                .blogComment__head-more-time=data.time 
+            a.blogComment__head-reply(href="#") Trả lời 
+        .blogComment__body 
+            p=data.content
+
+mixin orderTable (data) 
+    tr 
+        each val in ["stt", "mã hóa đơn/ngày mua hàng", "kho nhận hàng", "số sp", "tổng tiền", "tình trạng", "thao tác"]
+            th=val
+    - for (var i = 1; i < 8; i++) 
+        tr 
+            td.order__list-body-code-number="0"+i
+            td.order__list-body-code
+                p=data.code 
+                small=data.time 
+            td.order__list-body-code-place=data.place 
+            td.order__list-body-code-quantity=data.quantity 
+            td.order__list-body-code-total=data.total 
+            td.order__list-body-code-status=data.status
+            td.order__list-body-code-link: a(href="#") Chi tiết
+
+mixin editProfile (type, data1, data2)
+    form.address__edit-form
+        if (type == "h3")
+            h3 ĐỊA CHỈ CỦA BẠN
+        else 
+            a(href="#") Thêm điạ chỉ
+        - for (var i = 0; i < 8; i++)  
+            +createTextInput(data1[i], "text", 0, data1[i], data2[i])
+        .address__edit-form-submit
+            div
+                input.customCheckbox(type="checkbox" name="setDefault" value="true")
+                label(for="setDefault") Đặt làm địa chỉ mặc định?
+            button.address__edit-form-submit-edit.btn CHỈNH SỬA ĐỊA CHỈ
+            button.btn XÓA  
+
+mixin editPayment (type, data1)
+    form.address__edit-form(style="flex-basis: 100%")
+        if (type == "h3")
+            h3 Điền thông tin thanh toán và giao hàng
+        - for (var i = 0; i < data1.length; i++)  
+            +createTextInput(data1[i], "text", 1, data1[i])
+        .address__edit-form-submit
+            div
+                input.customCheckbox(type="checkbox" name="setDefault" value="true")
+                label(for="setDefault") Đặt làm địa chỉ nhận hàng mặc định?
+            button(type="button").address__edit-form-submit-edit.btn TIẾP THEO
+            button(type="button").address__edit-form-submit-back.btn QUAY LẠI
+
+mixin progressbar (text)
+    .progressbar
+        .progressbar__bar
+            div=text
+        p.progressbar__text=text

@@ -1,0 +1,32 @@
+extends layout.pug
+block title 
+    title Liên hệ 
+block content
+    .container 
+        .contact 
+            +breadcrumb(["Trang chủ", "Địa chỉ"])
+            +titleLeft("LIÊN HỆ", "big")
+            .contact__inner
+                .contact__inner-left
+                    .contact__inner-left-map
+                        iframe#gmap_canvas(src='https://maps.google.com/maps?q=chelsea%20bridge&t=&z=15&ie=UTF8&iwloc=&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0')
+                    form.contact__inner-left-form 
+                        +createTextInput("Your Name", "text", 0, "name")
+                        +createTextInput("Your Email", "email", 0, "email")
+                        +createTextInput("Your Subject", "text", 0, "subject")
+                        +createTextArea("Your Message", 0, "message")
+                        button.btn GỬI
+                .contact__inner-right 
+                    img(src="assets/images/menuLogo.png")
+                    .contact__inner-right-info
+                        each val in orderInfo
+                            .contact__inner-right-info-item
+                                div 
+                                    i(class=val.icon)
+                                div 
+                                    p=val.title 
+                                    p=val.content
+                    .contact__inner-right-social
+                        h3 FOLLOW US: 
+                        each val in footerSocial
+                            a(href="#"): i(class=val)
